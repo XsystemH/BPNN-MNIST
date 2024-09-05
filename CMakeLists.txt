@@ -7,4 +7,5 @@ include_directories(src)
 
 add_executable(BPNN-MNIST
         src/main.cpp
-        src/NeuralNetwork.h)
+        src/NeuralNetwork.h
+        src/mnist_reader/mnist_reader.hpp)

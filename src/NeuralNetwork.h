@@ -28,6 +28,12 @@ public:
 
   }
 
+  void train(const std::vector<std::vector<double>>& data, const std::vector<int>& labels, int epochs, double learning_rate) {
+
+  }
+
+
+
 private:
   static std::vector<std::vector<double>> initialize_weights(int m, int n) {
     std::random_device rd;

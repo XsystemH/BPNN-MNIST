@@ -33,7 +33,48 @@ A demo to Machine Learning, CS1950, SJTU
 
 ### 数据集: MNIST
 
+使用`mnist_reader`加载`MNIST`数据集非常方便，它会将数据加载为简单的`std::vector`类型，以便处理图像和标签。
 
+#### `mnist_reader`库的数据格式
+
+使用 mnist_reader 加载的数据格式为：
+
+图像数据：每张图像为一个`28x28`像素的灰度图，展平成一个包含`784`个元素的`std::vector<uint8_t>`，数值范围在 [0, 255] 之间。
+
+标签数据：标签是每张图像对应的数字（0-9），格式为`std::vector<uint8_t>`
+
+#### 使用`mnist_reader`加载数据
+
+首先，确保在你的 C++ 项目中引入了`mnist_reader`。你可以从[mnist-cpp](https://github.com/wichtounet/mnist) 获取这个库并将其集成到你的项目中。(这一步已经完成，可以直接使用)
+
+下面是一个示例，展示如何加载训练数据和测试数据：
+
+```c++
+#include "mnist_reader.hpp"
+#include "mnist_reader_less.hpp"
+#include <iostream>
+#include <vector>
+
+// 加载MNIST数据集
+int main() {
+    // 加载MNIST数据集，路径为存储MNIST数据集的文件夹
+    auto dataset = mnist::read_dataset<std::vector, std::vector, uint8_t, uint8_t>("mnist_data");
+
+    // 训练数据
+    std::vector<std::vector<uint8_t>> train_images = dataset.training_images;
+    std::vector<uint8_t> train_labels = dataset.training_labels;
+
+    // 测试数据
+    std::vector<std::vector<uint8_t>> test_images = dataset.test_images;
+    std::vector<uint8_t> test_labels = dataset.test_labels;
+
+    // 输出训练集和测试集的大小
+    std::cout << "Training set size: " << train_images.size() << " images\n";
+    std::cout << "Test set size: " << test_images.size() << " images\n";
+
+    return 0;
+}
+```
 
 ### src部分
 
