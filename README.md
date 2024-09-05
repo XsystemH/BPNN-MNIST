@@ -1,4 +1,4 @@
-# MNIST
+# BPNN-MNIST
 
 A demo to Machine Learning, CS1950, SJTU
 
@@ -15,5 +15,28 @@ A demo to Machine Learning, CS1950, SJTU
 为了不给大家带来额外的负担，demo的语言选取为C++，也仅仅是实现了一个很基础的基于神经网络的数字识别。
 （当然，如果有同学能力较强的话，完全可以无视这个框架，自己实现）
 
-## 数字识别
+## 基于反向传播神经网络的数字识别
 
+### 参考资料
+
+推荐论文:
+
+[Handwritten Digit Recognition with a Back-Propagation Network (1989)](https://proceedings.neurips.cc/paper_files/paper/1989/file/53c3bce66e43be4f209556518c2fcb54-Paper.pdf)
+
+推荐视频(3b1b的系列视频):
+
+[深度学习之神经网络的结构 Part 1 ver 2.0](https://www.bilibili.com/video/BV1bx411M7Zx/?share_source=copy_web&vd_source=4e87a3cc94a0b88cbc06001f2d08d6a8)
+
+[深度学习之梯度下降法 Part 2 ver 0.9 beta](https://www.bilibili.com/video/BV1Ux411j7ri/?share_source=copy_web&vd_source=4e87a3cc94a0b88cbc06001f2d08d6a8)
+
+[深度学习之反向传播算法 上/下 Part 3 ver 0.9 beta](https://www.bilibili.com/video/BV16x411V7Qg/?share_source=copy_web&vd_source=4e87a3cc94a0b88cbc06001f2d08d6a8)
+
+### 数据集: MNIST
+
+
+
+### src部分
+
+## 学有余力 → Transformer
+
+[Attention Is All You Need](https://user.phil.hhu.de/~cwurm/wp-content/uploads/2020/01/7181-attention-is-all-you-need.pdf)
