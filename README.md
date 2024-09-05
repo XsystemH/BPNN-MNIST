@@ -2,6 +2,15 @@
 
 A demo to Machine Learning, CS1950, SJTU
 
+## 目录
+
+- [一些废话](#一些废话)
+- [基于反向传播神经网络的数字识别](#基于反向传播神经网络的数字识别)
+  - [参考资料](#参考资料)
+  - [数据集:MNIST](#数据集-mnist)
+  - [src部分](#src部分)
+- [学有余力?](#学有余力--transformer)
+
 ## 一些废话
 
 关于AI的使用，飘子逸其实非常熟悉，从军训做政工开始就熟练掌握了GPT提示词的编写，还经过了各种水课作业的千锤百炼，可以说是炉火纯青。
@@ -23,7 +32,7 @@ A demo to Machine Learning, CS1950, SJTU
 
 [Handwritten Digit Recognition with a Back-Propagation Network (1989)](https://proceedings.neurips.cc/paper_files/paper/1989/file/53c3bce66e43be4f209556518c2fcb54-Paper.pdf)
 
-推荐视频(3b1b的系列视频):
+推荐视频(3b1b的系列视频，总时长在1小时以内，最好找时间看完，以明白接下来你需要做什么):
 
 [深度学习之神经网络的结构 Part 1 ver 2.0](https://www.bilibili.com/video/BV1bx411M7Zx/?share_source=copy_web&vd_source=4e87a3cc94a0b88cbc06001f2d08d6a8)
 
@@ -51,7 +60,6 @@ A demo to Machine Learning, CS1950, SJTU
 
 ```c++
 #include "mnist_reader.hpp"
-#include "mnist_reader_less.hpp"
 #include <iostream>
 #include <vector>
 
@@ -77,6 +85,24 @@ int main() {
 ```
 
 ### src部分
+
+#### main
+
+在`main`函数中，我们利用`mnist-reader`从`mnist_data`文件夹获取了`60000`组带有标记的数据，其格式为`uint_8`也就是整型，范围在0-255，而之后训练用到的最好为0-1之间的浮点数，所以我们先进行一步转化，将其以浮点类型储存。
+
+#### NeuralNetwork
+
+我们需要实现以下内容:
+
+public:
+- 用于预测时的`forward`函数
+- `predict`函数
+- `train`函数
+
+private:
+- 矩阵乘法
+- `active`函数
+- `softmax`函数
 
 ## 学有余力 → Transformer
 

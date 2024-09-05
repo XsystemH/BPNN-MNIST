@@ -1,5 +1,5 @@
 //
-// Created by 13199 on 2024/9/4.
+// Created by PiaoZY on 2024/9/4.
 //
 #include "mnist_reader/mnist_reader.hpp"
 #include <iostream>
@@ -9,6 +9,7 @@
 int main() {
   // 加载MNIST数据集，路径为存储MNIST数据集的文件夹
   auto dataset = mnist::read_dataset<std::vector, std::vector, uint8_t, uint8_t>("../mnist_data");
+  // 这里“../”是因为运行时根目录在debug文件夹，而mnist_data在上一级文件夹
 
   // 训练数据
   std::vector<std::vector<uint8_t>> train_images = dataset.training_images;
